@@ -1,4 +1,4 @@
-import "tfplan/v2" as tfplan
+import "tfplan"
 
 allowed_sizes = ["t2.medium"]
 
@@ -6,7 +6,7 @@ allowed_sizes = ["t2.medium"]
 get_aws_instances = func() {
     instances = []
     for tfplan.module_paths as path {
-        instances += values(tfplan.module(path).resources.aws_instance) else []
+        instances += values(tfplan.module(path).resources.aws_instance.web) else []
     }
     return instances
 }
