@@ -1,4 +1,4 @@
-import "tfplan/v2" as tfplan
+import "tfplan"
 
 allowed_sizes = ["t2.medium"]
 
