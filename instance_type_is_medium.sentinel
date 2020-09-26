@@ -6,7 +6,7 @@ allowed_sizes = ["t2.medium"]
 get_aws_instances = func() {
     instances = []
 #    for tfplan.module_paths as path {
-    instances += values(tfplan.module(["server"]).resources.aws_instance)
+    instances += values(tfplan.module(["server"]).resources.aws_instance.web)
 #    }
     return instances
 }
