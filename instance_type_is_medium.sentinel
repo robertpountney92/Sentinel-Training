@@ -5,9 +5,9 @@ allowed_sizes = ["t2.medium"]
 # Get all AWS instances contained in all modules being used
 get_aws_instances = func() {
     instances = []
-    for tfplan.module_paths as path {
-        instances += values(tfplan.module(path).resources.aws_instance) else []
-    }
+#    for tfplan.module_paths as path {
+    instances += values(tfplan.module(["server"]).resources.aws_instance)
+#    }
     return instances
 }
 
